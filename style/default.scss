@@ -1,0 +1,9 @@
+$themeColor: #bedada;
+$lightShift: 20%;
+
+html {
+    --default-background: $themeColor;
+    --lighter-background: lighten($themeColor, $lightShift);
+    --darker-background: darken($themeColor, $lightShift);
+    --default-date: darken($themeColor, $lightShift);
+}

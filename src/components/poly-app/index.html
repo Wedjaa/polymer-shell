@@ -1,0 +1,36 @@
+<link rel="import" href="/libs/polymer/polymer-element.html">
+<link rel="import" href="/components/poly-form">
+
+<dom-module id="poly-app">
+  <template>
+    <style lang="scss">
+      :host {
+        font-family: monospace;
+        color: var(--poly-app-background, var(--default-background, rgba(0,0,0,0)));
+      }
+
+      .date {
+        color: var(--poly-app-date, var(--default-date, yellow));
+      }
+
+    </style>
+    <h1>Hello, World! <p class="date">{{today}}</span></h1>
+      <poly-form></poly-form>
+  </template>
+  <script>
+    class PolyApp extends Polymer.Element {
+      static get is() { return 'poly-app' }
+      static get properties() {
+        return {
+          today: {
+            type: String,
+            value: function() {
+              return new Date()
+            }
+          }
+        }
+      }
+    }
+    window.customElements.define(PolyApp.is, PolyApp)
+  </script>
+</dom-module>

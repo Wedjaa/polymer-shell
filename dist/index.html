@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Polymer Yarn Shell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/webcomponents/webcomponents-loader.js"></script>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <poly-app></poly-app>
+    <script>
+      (function() {
+        document.addEventListener('WebComponentsReady', function componentsReady() {
+          document.removeEventListener('WebComponentsReady', componentsReady, false);
+          console.log(`Web components ready - installing bundle.js`)
+          var script = document.createElement('script');
+          script.src = 'bundle.js';
+          var refScript = document.getElementsByTagName('script')[0];
+          refScript.parentNode.insertBefore(script, refScript);
+        }, false);
+      })();
+    </script>
+
+  </body>
+</html>

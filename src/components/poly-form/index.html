@@ -1,0 +1,21 @@
+<link rel="import" href="/libs/polymer/polymer-element.html">
+<link rel="import" href="./style.html">
+
+<dom-module id="poly-form">
+  <template>
+    <style include="style"></style>
+    <div class="poly-form">
+      <h2>This is a container component.</h2>
+    </div>
+  </template>
+  <script>
+    class PolyForm extends Polymer.Element {
+      static get is() { return 'poly-form' }
+      static get properties() {
+        return {
+        }
+      }
+    }
+    window.customElements.define(PolyForm.is, PolyForm)
+  </script>
+</dom-module>
